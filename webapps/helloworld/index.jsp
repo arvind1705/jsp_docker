@@ -1,53 +1,31 @@
-
-
-<%@ page import="java.io.*" %>
 <HTML>
     <HEAD>
-        <TITLE>Reading Binary Data</TITLE>
+        <TITLE>Please Sign My Guest Book!</TITLE>
     </HEAD>
 
     <BODY>
-        <H1>Sample program to read and write data to file.</H1>
-        <!-- This page reads binary data from a file. -->
-        <BR>
-        <!-- Read this data: -->
-        <BR>
-        <BR>
-
-        <ul>
-            <li>
-                <p><b>First Name:></b>
-                <%= request.getParameter('first_name')%>
-                </p>
-            </li>
-        </ul>
-
-        <%
-            String file = application.getRealPath("/") + "data.txt";
-            FileInputStream fileinputstream = new FileInputStream(file);
-
-            int numberBytes = fileinputstream.available();
-            byte bytearray[] = new byte[numberBytes];
-
-            fileinputstream.read(bytearray);
-
-            for(int i = 0; i < numberBytes; i++){
-                System.out.println(bytearray[i]);
-            }
-
-            fileinputstream.close();
+        <CENTER>
+            <H1>Please Sign My Guest Book!</H1>
+            <FORM ACTION="basic.jsp" METHOD="POST">
+                Your name:
+                <INPUT TYPE="TEXT" NAME="TEXT1">
+                <BR>
+                <BR>
+                <BR>
+                Your comments:
+                <BR>
+                <TEXTAREA NAME="TEXTAREA1" ROWS="5" COLS="50"></TEXTAREA>
+                <BR>
+                <INPUT TYPE="SUBMIT" VALUE="Submit"><INPUT TYPE="RESET" VALUE="Reset">
+            </FORM>
 
 
-            BufferedReader reader = new BufferedReader(new FileReader(file));
-            StringBuilder sb = new StringBuilder();
-            String line;
+            <FORM ACTION="view.jsp" METHOD="POST">
 
-            while((line = reader.readLine())!= null){
-                sb.append(line+"\n");
-            }
-            out.println(sb.toString()); 
+                <INPUT TYPE="SUBMIT" VALUE="view"><INPUT TYPE="RESET" VALUE="Reset">
+            </FORM>
 
 
-        %>
+        </CENTER>
     </BODY>
 </HTML>
