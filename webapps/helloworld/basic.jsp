@@ -6,7 +6,6 @@
    <body>
       <h1>Data written to local text file.</h1>
       <br>
-      <h1>#Name#College#Student/Staff#Address#Phone Number#</h1>
       <br>
       <br>
       <%
@@ -19,7 +18,7 @@
          
          String file = application.getRealPath("/") + "data.txt";         
          FileWriter filewriter = new FileWriter(file, true);
-         filewriter.write("#"+name+"#"+college+"#"+type+"#"+address+"#"+number+"#<br>");
+         filewriter.write("<BR>#"+name+"#"+college+"#"+type+"#"+address+"#"+number+"#<BR>");
          filewriter.close();
          
          %>
