@@ -17,7 +17,7 @@
          String type = request.getParameter("type");
          
          
-         String file = application.getRealPath("/") + "test.txt";         
+         String file = application.getRealPath("/") + "data.txt";         
          FileWriter filewriter = new FileWriter(file, true);
          filewriter.write("#"+name+"#"+college+"#"+type+"#"+address+"#"+number+"#<br>");
          filewriter.close();

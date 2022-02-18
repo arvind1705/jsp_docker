@@ -8,7 +8,7 @@
       <br>
       <br>
       <%
-         String file = application.getRealPath("/") + "test.txt";
+         String file = application.getRealPath("/") + "data.txt";
          File fileObject = new File(file);
          
          char data[] = new char[(int) fileObject.length()];
